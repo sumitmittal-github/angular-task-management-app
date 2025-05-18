@@ -10,6 +10,9 @@ import { DUMMY_USERS } from './dummy-users';
 export class UserComponent {
 
   selectedUser = DUMMY_USERS[0];
-  
+
+  get imagePath() {
+    return '/users/' + this.selectedUser.avatar;
+  }
 
 }
