@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { DUMMY_USERS } from './dummy-users';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -9,23 +8,28 @@ import { DUMMY_USERS } from './dummy-users';
 })
 export class UserComponent {
 
-  randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-  selectedUser = DUMMY_USERS[this.randomIndex];
+  @Input()
+  name! : string;
 
-  get imagePath() {
-    return '/users/' + this.selectedUser.avatar;
+  @Input()
+  image! : string;
+
+  get imagePath(){
+    return '/users/' + this.image;
   }
 
   onClickSelectedUser() {
-    this.selectedUser = DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
   }
 
+  /*
   count = signal(0);
+  
   decreaseCount(){
     this.count.update(v => v - 1);
   }
   increaseCount(){
     this.count.update(v => v + 1);
   }
+  */
 
 }
