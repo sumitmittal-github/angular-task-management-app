@@ -3,4 +3,10 @@
         <img [src]="imagePath"/>
         <span>{{selectedUser.name}}</span>
     </button>
+
+    <button (click)="decreaseCount()"> - </button>
+    <input type="text" [value]="count"/>
+    <button (click)="increaseCount()"> + </button>
+
+
 </div>

@@ -20,4 +20,12 @@ export class UserComponent {
     this.selectedUser = DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
   }
 
+  count: number=0;
+  decreaseCount(){
+    this.count = this.count-1;
+  }
+  increaseCount(){
+    this.count = this.count+1;
+  }
+
 }
