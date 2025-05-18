@@ -9,10 +9,15 @@ import { DUMMY_USERS } from './dummy-users';
 })
 export class UserComponent {
 
-  selectedUser = DUMMY_USERS[0];
+  randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+  selectedUser = DUMMY_USERS[this.randomIndex];
 
   get imagePath() {
     return '/users/' + this.selectedUser.avatar;
+  }
+
+  onClickSelectedUser() {
+    this.selectedUser = DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
   }
 
 }
