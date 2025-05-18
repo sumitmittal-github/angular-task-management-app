@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
 
 @Component({
@@ -20,12 +20,12 @@ export class UserComponent {
     this.selectedUser = DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
   }
 
-  count: number=0;
+  count = signal(0);
   decreaseCount(){
-    this.count = this.count-1;
+    this.count.update(v => v - 1);
   }
   increaseCount(){
-    this.count = this.count+1;
+    this.count.update(v => v + 1);
   }
 
 }
