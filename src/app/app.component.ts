@@ -14,7 +14,7 @@ import { User } from './models/user';
 export class AppComponent {
   users : User[] = DUMMY_USERS;
   
-  selectedUser: User = DUMMY_USERS[0];
+  selectedUser?: User;
 
   onSelectUser (id : string) {
     this.selectedUser = this.users.find(u => u.id === id)!;

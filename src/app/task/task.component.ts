@@ -10,6 +10,6 @@ import { User } from '../models/user';
 export class TaskComponent {
 
   @Input({required : true})
-  selectedUser!: User;
+  selectedUserObj!: User;
 
 }

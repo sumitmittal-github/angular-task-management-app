@@ -7,6 +7,11 @@
         }
     </ul>
 
-    <app-task [selectedUser] = "selectedUser"/>
-
+    @if(selectedUser){
+        <app-task [selectedUserObj] = "selectedUser"/>
+    }
+    @else{
+        <p id="fallback">Select a user to see their tasks!</p>
+    }
+ 
 </main>
