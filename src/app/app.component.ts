@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './user/dummy-users';
+import { TaskComponent } from "./task/task.component";
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [HeaderComponent, UserComponent]
+  imports: [HeaderComponent, UserComponent, TaskComponent]
 })
 export class AppComponent {
+  users : User[] = DUMMY_USERS;
   
-  title = 'first-angular-app';
-  users = DUMMY_USERS;
+  selectedUser: User = DUMMY_USERS[0];
 
   onSelectUser (id : string) {
-    console.log(id);
+    this.selectedUser = this.users.find(u => u.id === id)!;
   }
 
 }

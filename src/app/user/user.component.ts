@@ -18,7 +18,7 @@ export class UserComponent {
   image! : string;
 
   @Output()
-  selectedUserId = new EventEmitter<String>();
+  selectedUserId = new EventEmitter<string>();
 
   get imagePath(){
     return '/users/' + this.image;
