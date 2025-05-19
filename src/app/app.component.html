@@ -3,16 +3,32 @@
 <main>
     <ul id="users">
         <li>
-            <app-user [name]="users[0].name" [image]="users[0].image" />
+            <app-user [id]="users[0].id" 
+                      [name]="users[0].name" 
+                      [image]="users[0].image"
+                      (selectedUserId) = "onSelectUser($event)"
+            />
         </li>
         <li>
-            <app-user [name]="users[1].name" [image]="users[1].image" />
+            <app-user [id]="users[1].id" 
+                      [name]="users[1].name" 
+                      [image]="users[1].image" 
+                      (selectedUserId) = "onSelectUser($event)"
+            />
         </li>
         <li>
-            <app-user [name]="users[2].name" [image]="users[2].image" />
+            <app-user [id]="users[2].id" 
+                      [name]="users[2].name" 
+                      [image]="users[2].image" 
+                      (selectedUserId) = "onSelectUser($event)"
+            />
         </li>
         <li>
-            <app-user [name]="users[3].name" [image]="users[3].image" />
+            <app-user [id]="users[3].id" 
+                      [name]="users[3].name" 
+                      [image]="users[3].image" 
+                      (selectedUserId) = "onSelectUser($event)"
+            />
         </li>
     </ul>
 </main>
