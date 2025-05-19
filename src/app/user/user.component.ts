@@ -8,17 +8,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class UserComponent {
 
-  @Input()
+  @Input({required : true})
   id! : string;
 
-  @Input()
+  @Input({required : true})
   name! : string;
 
-  @Input()
+  @Input({required : true})
   image! : string;
 
   @Output()
-  selectedUserId = new EventEmitter();
+  selectedUserId = new EventEmitter<String>();
 
   get imagePath(){
     return '/users/' + this.image;
