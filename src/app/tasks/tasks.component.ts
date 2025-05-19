@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 import { User } from '../models/user';
 
 @Component({
-  selector: 'app-task',
+  selector: 'app-tasks',
   imports: [],
-  templateUrl: './task.component.html',
-  styleUrl: './task.component.scss'
+  templateUrl: './tasks.component.html',
+  styleUrl: './tasks.component.scss'
 })
-export class TaskComponent {
+export class TasksComponent {
 
   @Input({required : true})
   selectedUserObj!: User;
