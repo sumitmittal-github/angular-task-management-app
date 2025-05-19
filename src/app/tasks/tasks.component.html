@@ -1,1 +1,23 @@
-{{selectedUserObj.id}}  -  {{selectedUserObj.name}}  -  {{selectedUserObj.image}}
+<section id="tasks">
+    <header>
+        <h2>{{selectedUserObj.name}}'s Tasks</h2>
+        <menu>
+            <button>Add Task</button>
+        </menu>
+    </header>
+    
+    <ul>
+        <li>
+            <app-task></app-task>
+        </li>
+        <li>
+            <app-task></app-task>
+        </li>
+        <li>
+            <app-task></app-task>
+        </li>
+        <li>
+            <app-task></app-task>
+        </li>
+    </ul>
+</section>
