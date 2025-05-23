@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from './user/user.component';
-import { DUMMY_USERS } from './user/dummy-users';
+import { DUMMY_USERS } from '../../public/dummy-users';
 import { TasksComponent } from "./tasks/tasks.component";
 import { User } from './models/user';
 
@@ -16,7 +16,7 @@ export class AppComponent {
   
   selectedUser?: User;
 
-  onSelectUser (id : string) {
+  onSelectUser (id : number) {
     this.selectedUser = this.users.find(u => u.id === id)!;
   }
 
