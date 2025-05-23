@@ -17,6 +17,9 @@ export class TasksComponent {
 
   tasks: Task[] = DUMMY_TASKS;
 
+  get selectedUserTasks() {
+    return this.tasks.filter(t => t.userId === this.selectedUserObj.id);
+  }
 
   
 
