@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../models/user';
+import { User } from '../user/user.model';
 import { TaskComponent } from "./task/task.component";
-import { Task } from '../models/task';
+import { Task } from './task/task.model';
 import { DUMMY_TASKS } from '../../../public/dummy-tasks';
 
 @Component({
