@@ -12,6 +12,9 @@ export class UserComponent {
   @Input({required : true})
   user! : User;
 
+  @Input({required : true})
+  selected: boolean = false;
+
   @Output()
   selectedUserEvent = new EventEmitter<number>();
 
