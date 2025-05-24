@@ -21,6 +21,10 @@ export class TasksComponent {
     return this.tasks.filter(t => t.userId === this.selectedUserObj.id);
   }
 
+  markTaskAsComplete(taskId: number) {
+    console.log('Task marked as completed:', taskId);
+    this.tasks = this.tasks.filter(t => t.id !== taskId);
+  }
   
 
 }
