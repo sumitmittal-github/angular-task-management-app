@@ -1,5 +1,5 @@
 @if(displayAddNewTaskGrid) {
-    <app-new-task></app-new-task>
+    <app-new-task (closePopupEvent)="closePopupGrid()"></app-new-task>
 }
 
 <section id="tasks">
@@ -7,7 +7,7 @@
     <header>
         <h2>{{selectedUserObj.name}}'s Tasks</h2>
         <menu>
-            <button (click)="addNewTask()">Add Task</button>
+            <button (click)="openNewTaskPopup()">Add Task</button>
         </menu>
     </header>
     
