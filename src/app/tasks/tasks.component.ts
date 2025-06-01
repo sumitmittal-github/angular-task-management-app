@@ -35,7 +35,7 @@ export class TasksComponent {
     this.displayAddNewTaskGrid = true;
   }
 
-  closePopupGrid(){
+  closeNewTaskPopup(){
     this.displayAddNewTaskGrid = false;
   }
 
