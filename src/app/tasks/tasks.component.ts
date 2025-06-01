@@ -36,5 +36,11 @@ export class TasksComponent {
     this.displayAddNewTaskGrid = false;
   }
 
+  createNewTask(newTask: Task) {
+    // add the new task to the tasks array
+    newTask.userId = this.selectedUserObj.id; // ensure the task is associated with the selected user
+    this.tasks.push(newTask);
+  } 
+
 
 }

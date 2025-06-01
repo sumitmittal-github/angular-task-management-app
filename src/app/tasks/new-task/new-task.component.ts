@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Task } from '../task/task.model';
 
 @Component({
   selector: 'app-new-task',
@@ -12,6 +13,9 @@ export class NewTaskComponent {
   @Output()
   closePopupEvent: EventEmitter<void> = new EventEmitter<void>();
 
+  @Output()
+  newTaskEvent: EventEmitter<Task> = new EventEmitter<Task>();
+
   enteredTitle: string = '';
   enteredSummary: string = '';
   enteredDueDate: string = '';
@@ -21,10 +25,11 @@ export class NewTaskComponent {
   }
 
   onNewTaskSubmit(){
-    console.log("Form submitted");
-    console.log(this.enteredTitle);
-    console.log(this.enteredSummary);
-    console.log(this.enteredDueDate);
+    // create a new task object
+    const newTask: Task = new Task(this.enteredTitle, this.enteredSummary, this.enteredDueDate);
+    this.newTaskEvent.emit(newTask);
+    
+    // close the popup
     this.closeNewTaskPopup();
   }
 
