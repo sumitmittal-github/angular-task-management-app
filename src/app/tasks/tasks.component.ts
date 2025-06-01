@@ -37,8 +37,10 @@ export class TasksComponent {
   }
 
   createNewTask(newTask: Task) {
-    // add the new task to the tasks array
+    newTask.id = new Date().getTime(); // generate a unique ID based on the current timestamp
     newTask.userId = this.selectedUserObj.id; // ensure the task is associated with the selected user
+    console.log("New task created:");
+    console.log(newTask);
     this.tasks.push(newTask);
   } 
 
