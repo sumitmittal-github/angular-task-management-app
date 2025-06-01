@@ -27,10 +27,6 @@ export class TasksComponent {
     return this.tasksService.getUserTasks(this.selectedUserObj.id);
   }
 
-  markTaskAsComplete(taskId: number) {
-    this.tasksService.completeTask(taskId);
-  }
-
   openNewTaskPopup(){
     this.displayAddNewTaskGrid = true;
   }
