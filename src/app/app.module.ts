@@ -9,6 +9,7 @@ import { TasksComponent } from "./tasks/tasks.component";
 import { CardComponent } from "./shared/card/card.component";
 import { TaskComponent } from "./tasks/task/task.component";
 import { NewTaskComponent } from "./tasks/new-task/new-task.component";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -17,12 +18,10 @@ import { NewTaskComponent } from "./tasks/new-task/new-task.component";
         UserComponent, 
         TasksComponent, 
         TaskComponent, 
-        NewTaskComponent, 
-        CardComponent
+        NewTaskComponent
     ],
     bootstrap: [AppComponent],
-    imports: [BrowserModule, FormsModule, DatePipe]
-
+    imports: [BrowserModule, FormsModule, DatePipe, SharedModule]
 })
 export class AppModule {
 
