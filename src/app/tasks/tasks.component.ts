@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { User } from '../user/user.model';
 import { TaskComponent } from "./task/task.component";
 import { Task } from './task/task.model';
-import { DUMMY_TASKS } from '../../../public/dummy-tasks';
 import { NewTaskComponent } from './new-task/new-task.component';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -16,16 +16,19 @@ export class TasksComponent {
   @Input({required : true})
   selectedUserObj!: User;
 
-  tasks: Task[] = DUMMY_TASKS;
-
   displayAddNewTaskGrid: boolean = false;
 
+  constructor(private tasksService : TasksService) {
+  }
+
+
+
   get selectedUserTasks() {
-    return this.tasks.filter(t => t.userId === this.selectedUserObj.id);
+    return this.tasksService.getUserTasks(this.selectedUserObj.id);
   }
 
   markTaskAsComplete(taskId: number) {
-    this.tasks = this.tasks.filter(t => t.id !== taskId);
+    this.tasksService.completeTask(taskId);
   }
 
   openNewTaskPopup(){
@@ -37,11 +40,7 @@ export class TasksComponent {
   }
 
   createNewTask(newTask: Task) {
-    newTask.id = new Date().getTime(); // generate a unique ID based on the current timestamp
-    newTask.userId = this.selectedUserObj.id; // ensure the task is associated with the selected user
-    console.log("New task created:");
-    console.log(newTask);
-    this.tasks.push(newTask);
+    this.tasksService.addTask(newTask, this.selectedUserObj.id);
   } 
 
 
