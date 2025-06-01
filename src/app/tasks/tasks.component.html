@@ -1,5 +1,5 @@
 @if(displayAddNewTaskGrid) {
-    <app-new-task (closePopupEvent)="closeNewTaskPopup()" (newTaskEvent)="createNewTask($event)"></app-new-task>
+    <app-new-task [selectedUserId]="selectedUserObj.id" (closePopupEvent)="closeNewTaskPopup()"></app-new-task>
 }
 
 <section id="tasks">
