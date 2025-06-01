@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { DUMMY_USERS } from '../../public/dummy-users';
 import { User } from './user/user.model';
 
