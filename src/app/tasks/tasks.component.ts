@@ -7,9 +7,9 @@ import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent, NewTaskComponent],
   templateUrl: './tasks.component.html',
-  styleUrl: './tasks.component.scss'
+  styleUrl: './tasks.component.scss',
+  imports: [TaskComponent, NewTaskComponent]
 })
 export class TasksComponent {
 

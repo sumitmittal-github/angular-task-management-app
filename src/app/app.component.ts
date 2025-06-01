@@ -1,15 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { HeaderComponent } from "./header/header.component";
-import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from '../../public/dummy-users';
-import { TasksComponent } from "./tasks/tasks.component";
 import { User } from './user/user.model';
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [HeaderComponent, UserComponent, TasksComponent]
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   users : User[] = DUMMY_USERS;
